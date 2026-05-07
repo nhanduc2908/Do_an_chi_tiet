@@ -736,3 +736,277 @@ uation_system_complete/01_backend/app/Console/Commands/SendSystemReport.php
 ├── 📄 AIAnalysisRequest.php
 ├── 📄 RecommendationRequest.php
 └── 📄 SettingsRequest.php
+
+
+lib/features/
+│
+├── 01_auth/                          # 🔐 CHỨC NĂNG 1: XÁC THỰC
+│   ├── login/                        # Đăng nhập
+│   │   ├── login_screen.dart
+│   │   └── login_controller.dart
+│   ├── register/                     # Đăng ký
+│   │   ├── register_screen.dart
+│   │   └── register_controller.dart
+│   ├── forgot_password/              # Quên mật khẩu
+│   │   ├── forgot_password_screen.dart
+│   │   └── forgot_password_controller.dart
+│   ├── verify_otp/                   # Xác thực OTP
+│   │   ├── verify_otp_screen.dart
+│   │   └── verify_otp_controller.dart
+│   └── reset_password/               # Đặt lại mật khẩu
+│       ├── reset_password_screen.dart
+│       └── reset_password_controller.dart
+│
+├── 02_dashboard/                     # 📊 CHỨC NĂNG 2: DASHBOARD
+│   ├── admin/                        # Dashboard Admin
+│   │   └── admin_dashboard.dart
+│   ├── developer/                    # Dashboard Developer
+│   │   └── dev_dashboard.dart
+│   ├── business_analyst/             # Dashboard BA
+│   │   └── ba_dashboard.dart
+│   ├── data_analyst/                 # Dashboard DA
+│   │   └── da_dashboard.dart
+│   ├── hr/                           # Dashboard HR
+│   │   └── hr_dashboard.dart
+│   ├── qa/                           # Dashboard QA
+│   │   └── qa_dashboard.dart
+│   ├── secops/                       # Dashboard SecOps
+│   │   └── secops_dashboard.dart
+│   ├── auditor/                      # Dashboard Auditor
+│   │   └── auditor_dashboard.dart
+│   ├── manager/                      # Dashboard Manager
+│   │   └── manager_dashboard.dart
+│   ├── ciso/                         # Dashboard CISO
+│   │   └── ciso_dashboard.dart
+│   └── widgets/                      # Widgets dùng chung
+│       ├── stat_card.dart
+│       ├── chart_widget.dart
+│       └── activity_item.dart
+│
+├── 03_user_management/               # 👥 CHỨC NĂNG 3: QUẢN LÝ NGƯỜI DÙNG
+│   ├── list/                         # Danh sách người dùng
+│   │   ├── users_list_screen.dart
+│   │   └── users_list_controller.dart
+│   ├── detail/                       # Chi tiết người dùng
+│   │   ├── user_detail_screen.dart
+│   │   └── user_detail_controller.dart
+│   ├── create/                       # Thêm người dùng
+│   │   ├── create_user_screen.dart
+│   │   └── create_user_controller.dart
+│   ├── edit/                         # Sửa người dùng
+│   │   ├── edit_user_screen.dart
+│   │   └── edit_user_controller.dart
+│   ├── role/                         # Phân quyền
+│   │   ├── role_management_screen.dart
+│   │   └── role_management_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── user_card.dart
+│       ├── user_filter.dart
+│       └── role_badge.dart
+│
+├── 04_device_management/             # 📱 CHỨC NĂNG 4: QUẢN LÝ THIẾT BỊ
+│   ├── list/                         # Danh sách thiết bị
+│   │   ├── devices_screen.dart
+│   │   └── devices_controller.dart
+│   ├── link/                         # Liên kết thiết bị
+│   │   ├── link_device_screen.dart
+│   │   └── link_device_controller.dart
+│   ├── detail/                       # Chi tiết thiết bị
+│   │   ├── device_detail_screen.dart
+│   │   └── device_detail_controller.dart
+│   ├── unlink/                       # Hủy liên kết
+│   │   ├── unlink_device_screen.dart
+│   │   └── unlink_device_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── device_card.dart
+│       └── connection_status.dart
+│
+├── 05_evaluation/                    # 📝 CHỨC NĂNG 5: ĐÁNH GIÁ HỆ THỐNG
+│   ├── list/                         # Danh sách đánh giá
+│   │   ├── evaluations_screen.dart
+│   │   └── evaluations_controller.dart
+│   ├── create/                       # Tạo đánh giá mới
+│   │   ├── create_evaluation_screen.dart
+│   │   └── create_evaluation_controller.dart
+│   ├── detail/                       # Chi tiết đánh giá
+│   │   ├── evaluation_detail_screen.dart
+│   │   └── evaluation_detail_controller.dart
+│   ├── result/                       # Kết quả đánh giá
+│   │   ├── evaluation_result_screen.dart
+│   │   └── evaluation_result_controller.dart
+│   ├── history/                      # Lịch sử đánh giá
+│   │   ├── evaluation_history_screen.dart
+│   │   └── evaluation_history_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── evaluation_card.dart
+│       ├── score_indicator.dart
+│       ├── rating_stars.dart
+│       └── progress_chart.dart
+│
+├── 06_report/                        # 📄 CHỨC NĂNG 6: BÁO CÁO THỐNG KÊ
+│   ├── list/                         # Danh sách báo cáo
+│   │   ├── reports_screen.dart
+│   │   └── reports_controller.dart
+│   ├── create/                       # Tạo báo cáo
+│   │   ├── create_report_screen.dart
+│   │   └── create_report_controller.dart
+│   ├── detail/                       # Chi tiết báo cáo
+│   │   ├── report_detail_screen.dart
+│   │   └── report_detail_controller.dart
+│   ├── export/                       # Xuất báo cáo
+│   │   ├── export_report_screen.dart
+│   │   └── export_report_controller.dart
+│   ├── schedule/                     # Lên lịch báo cáo
+│   │   ├── schedule_report_screen.dart
+│   │   └── schedule_report_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── report_card.dart
+│       ├── chart_widget.dart
+│       ├── filter_widget.dart
+│       └── date_range_picker.dart
+│
+├── 07_audit/                         # 🔍 CHỨC NĂNG 7: TRUY VẾT NHẬT KÝ
+│   ├── logs/                         # Nhật ký hệ thống
+│   │   ├── audit_logs_screen.dart
+│   │   └── audit_logs_controller.dart
+│   ├── detail/                       # Chi tiết log
+│   │   ├── audit_detail_screen.dart
+│   │   └── audit_detail_controller.dart
+│   ├── filter/                       # Lọc nhật ký
+│   │   ├── audit_filter_screen.dart
+│   │   └── audit_filter_controller.dart
+│   ├── export/                       # Xuất nhật ký
+│   │   ├── export_audit_screen.dart
+│   │   └── export_audit_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── log_item.dart
+│       ├── log_filter.dart
+│       └── timeline_widget.dart
+│
+├── 08_notification/                  # 🔔 CHỨC NĂNG 8: THÔNG BÁO
+│   ├── list/                         # Danh sách thông báo
+│   │   ├── notifications_screen.dart
+│   │   └── notifications_controller.dart
+│   ├── detail/                       # Chi tiết thông báo
+│   │   ├── notification_detail_screen.dart
+│   │   └── notification_detail_controller.dart
+│   ├── settings/                     # Cài đặt thông báo
+│   │   ├── notification_settings_screen.dart
+│   │   └── notification_settings_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── notification_card.dart
+│       ├── notification_badge.dart
+│       └── push_notification.dart
+│
+├── 09_profile/                       # 👤 CHỨC NĂNG 9: HỒ SƠ CÁ NHÂN
+│   ├── view/                         # Xem hồ sơ
+│   │   ├── profile_screen.dart
+│   │   └── profile_controller.dart
+│   ├── edit/                         # Sửa hồ sơ
+│   │   ├── edit_profile_screen.dart
+│   │   └── edit_profile_controller.dart
+│   ├── change_password/              # Đổi mật khẩu
+│   │   ├── change_password_screen.dart
+│   │   └── change_password_controller.dart
+│   ├── avatar/                       # Đổi avatar
+│   │   ├── avatar_upload_screen.dart
+│   │   └── avatar_upload_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── profile_header.dart
+│       ├── profile_menu_item.dart
+│       └── avatar_widget.dart
+│
+├── 10_security/                      # 🛡️ CHỨC NĂNG 10: BẢO MẬT 2 LỚP
+│   ├── two_factor/                   # Xác thực 2 lớp
+│   │   ├── two_factor_screen.dart
+│   │   └── two_factor_controller.dart
+│   ├── setup/                        # Thiết lập 2FA
+│   │   ├── setup_2fa_screen.dart
+│   │   └── setup_2fa_controller.dart
+│   ├── verify/                       # Xác thực mã
+│   │   ├── verify_code_screen.dart
+│   │   └── verify_code_controller.dart
+│   ├── recovery/                     # Mã khôi phục
+│   │   ├── recovery_codes_screen.dart
+│   │   └── recovery_codes_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── security_card.dart
+│       ├── permission_item.dart
+│       └── qr_code_display.dart
+│
+├── 11_screen_mirror/                 # 🖥️ CHỨC NĂNG 11: NHÂN BẢN MÀN HÌNH
+│   ├── share/                        # Chia sẻ màn hình
+│   │   ├── screen_share_screen.dart
+│   │   └── screen_share_controller.dart
+│   ├── view/                         # Xem màn hình
+│   │   ├── screen_view_screen.dart
+│   │   └── screen_view_controller.dart
+│   ├── history/                      # Lịch sử chia sẻ
+│   │   ├── mirror_history_screen.dart
+│   │   └── mirror_history_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── screen_preview.dart
+│       ├── control_panel.dart
+│       └── viewer_list.dart
+│
+├── 12_qr_scanner/                    # 📷 CHỨC NĂNG 12: QUÉT MÃ QR
+│   ├── scanner/                      # Quét QR
+│   │   ├── qr_scanner_screen.dart
+│   │   └── qr_scanner_controller.dart
+│   ├── generate/                     # Tạo mã QR
+│   │   ├── generate_qr_screen.dart
+│   │   └── generate_qr_controller.dart
+│   ├── history/                      # Lịch sử quét
+│   │   ├── scan_history_screen.dart
+│   │   └── scan_history_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── qr_view_finder.dart
+│       ├── qr_result_display.dart
+│       └── flash_control.dart
+│
+├── 13_biometric/                     # 👆 CHỨC NĂNG 13: XÁC THỰC VÂN TAY
+│   ├── setup/                        # Thiết lập vân tay
+│   │   ├── biometric_setup_screen.dart
+│   │   └── biometric_setup_controller.dart
+│   ├── verify/                       # Xác thực vân tay
+│   │   ├── biometric_verify_screen.dart
+│   │   └── biometric_verify_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── fingerprint_sensor.dart
+│       └── biometric_prompt.dart
+│
+├── 14_offline_sync/                  # 📶 CHỨC NĂNG 14: ĐỒNG BỘ NGOẠI TUYẾN
+│   ├── sync/                         # Đồng bộ dữ liệu
+│   │   ├── sync_screen.dart
+│   │   └── sync_controller.dart
+│   ├── cache/                        # Quản lý cache
+│   │   ├── cache_manager_screen.dart
+│   │   └── cache_manager_controller.dart
+│   ├── settings/                     # Cài đặt đồng bộ
+│   │   ├── sync_settings_screen.dart
+│   │   └── sync_settings_controller.dart
+│   └── widgets/                      # Widgets
+│       ├── sync_status.dart
+│       ├── offline_indicator.dart
+│       └── pending_changes.dart
+│
+└── 15_settings/                      # ⚙️ CHỨC NĂNG 15: CÀI ĐẶT HỆ THỐNG
+    ├── general/                      # Cài đặt chung
+    │   ├── general_settings_screen.dart
+    │   └── general_settings_controller.dart
+    ├── theme/                        # Giao diện (Dark/Light)
+    │   ├── theme_settings_screen.dart
+    │   └── theme_settings_controller.dart
+    ├── language/                     # Ngôn ngữ
+    │   ├── language_settings_screen.dart
+    │   └── language_settings_controller.dart
+    ├── about/                        # Giới thiệu
+    │   ├── about_screen.dart
+    │   └── about_controller.dart
+    ├── backup/                       # Sao lưu & Khôi phục
+    │   ├── backup_screen.dart
+    │   └── backup_controller.dart
+    └── widgets/                      # Widgets
+        ├── settings_item.dart
+        ├── switch_item.dart
+        └── version_info.dart
