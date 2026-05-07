@@ -1,0 +1,146 @@
+/* ======================================================
+   Responsive CSS - Breakpoints chính
+   ====================================================== */
+
+/* -------------------- Mobile S (320px - 374px) -------------------- */
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .table {
+        font-size: 0.75rem;
+    }
+    
+    .table th,
+    .table td {
+        padding: 0.5rem;
+    }
+}
+
+/* -------------------- Mobile M/L (375px - 767px) -------------------- */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .hide-on-mobile {
+        display: none !important;
+    }
+    
+    .mobile-full-width {
+        width: 100% !important;
+    }
+    
+    .mobile-stack {
+        flex-direction: column !important;
+    }
+    
+    .btn {
+        padding: 0.5rem 0.875rem;
+    }
+}
+
+/* -------------------- Tablet (768px - 1023px) -------------------- */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .hide-on-tablet {
+        display: none !important;
+    }
+    
+    .tablet-grid-cols-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+    
+    .tablet-grid-cols-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* -------------------- Desktop (1024px - 1279px) -------------------- */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    
+    .sidebar {
+        width: 240px;
+    }
+    
+    .main-content {
+        margin-left: 240px;
+    }
+}
+
+/* -------------------- Large Desktop (1280px - 1535px) -------------------- */
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .sidebar {
+        width: 260px;
+    }
+}
+
+/* -------------------- Extra Large (>= 1536px) -------------------- */
+@media screen and (min-width: 1536px) {
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    
+    .sidebar {
+        width: 280px;
+    }
+    
+    html {
+        font-size: 16px;
+    }
+}
+
+/* -------------------- Print Styles -------------------- */
+@media print {
+    .sidebar,
+    .header,
+    .footer,
+    .no-print {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}

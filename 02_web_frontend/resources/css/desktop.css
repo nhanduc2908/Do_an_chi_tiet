@@ -1,0 +1,106 @@
+/* ======================================================
+   Desktop CSS - Tối ưu cho máy tính để bàn
+   ====================================================== */
+
+@media screen and (min-width: 1024px) {
+    /* Grid layouts */
+    .desktop-grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .desktop-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .desktop-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Dashboard widgets */
+    .desktop-widget {
+        transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    
+    .desktop-widget:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    /* Sidebar behavior */
+    .desktop-sidebar {
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 260px;
+        height: calc(100vh - 60px);
+        background: white;
+        overflow-y: auto;
+        transition: width var(--transition-normal);
+    }
+    
+    .desktop-sidebar.collapsed {
+        width: 80px;
+    }
+    
+    .desktop-sidebar.collapsed .sidebar-text {
+        display: none;
+    }
+    
+    .desktop-sidebar.collapsed .sidebar-icon {
+        margin-right: 0;
+    }
+    
+    /* Quick actions toolbar */
+    .desktop-toolbar {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        display: flex;
+        gap: 0.5rem;
+        z-index: 100;
+    }
+    
+    /* Data tables with better density */
+    .desktop-table th,
+    .desktop-table td {
+        padding: 0.875rem 1rem;
+    }
+    
+    /* Right sidebar for details */
+    .desktop-detail-panel {
+        position: fixed;
+        right: 0;
+        top: 60px;
+        width: 320px;
+        height: calc(100vh - 60px);
+        background: white;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.05);
+        transform: translateX(100%);
+        transition: transform var(--transition-normal);
+        z-index: 90;
+    }
+    
+    .desktop-detail-panel.open {
+        transform: translateX(0);
+    }
+    
+    /* Keyboard shortcuts hint */
+    .keyboard-hint {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.75rem;
+        font-family: monospace;
+        z-index: 100;
+    }
+}

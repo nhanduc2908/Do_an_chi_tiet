@@ -1,0 +1,2 @@
+{"timestamp":"2025-01-15T10:00:00+07:00","event":"connection","client_id":"conn_abc","user_id":1}
+{"timestamp":"2025-01-15T10:30:00+07:00","event":"disconnection","client_id":"conn_abc","reason":"timeout"}

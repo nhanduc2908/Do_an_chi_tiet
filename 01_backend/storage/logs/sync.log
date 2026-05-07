@@ -1,0 +1,11 @@
+{"timestamp":"2025-01-15T10:00:00+07:00","user_id":1,"device_id":"DEV_ABC123","action":"sync_start","items":25}
+{"timestamp":"2025-01-15T10:00:05+07:00","user_id":1,"device_id":"DEV_ABC123","action":"sync_progress","progress":10,"remaining":15}
+{"timestamp":"2025-01-15T10:00:10+07:00","user_id":1,"device_id":"DEV_ABC123","action":"sync_complete","items_synced":25,"duration":10}
+{"timestamp":"2025-01-15T10:30:00+07:00","user_id":2,"device_id":"DEV_DEF456","action":"sync_start","items":50}
+{"timestamp":"2025-01-15T10:30:15+07:00","user_id":2,"device_id":"DEV_DEF456","action":"sync_conflict","type":"evaluation","id":100,"resolution":"server"}
+{"timestamp":"2025-01-15T10:30:20+07:00","user_id":2,"device_id":"DEV_DEF456","action":"sync_complete","items_synced":48,"conflicts":2}
+{"timestamp":"2025-01-15T11:00:00+07:00","user_id":3,"device_id":"DEV_GHI789","action":"sync_error","error":"Network timeout","retry":1}
+{"timestamp":"2025-01-15T11:05:00+07:00","user_id":3,"device_id":"DEV_GHI789","action":"sync_retry","retry":2}
+{"timestamp":"2025-01-15T11:05:10+07:00","user_id":3,"device_id":"DEV_GHI789","action":"sync_complete","items_synced":30,"duration":10}
+{"timestamp":"2025-01-15T12:00:00+07:00","user_id":4,"device_id":"DEV_JKL012","action":"sync_start","items":100}
+{"timestamp":"2025-01-15T12:00:30+07:00","user_id":4,"device_id":"DEV_JKL012","action":"sync_complete","items_synced":100,"duration":30}

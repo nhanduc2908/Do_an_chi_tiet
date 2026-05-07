@@ -1,0 +1,10 @@
+{"timestamp":"2025-01-15T10:30:15+07:00","level":"WARNING","event":"failed_login","ip":"192.168.1.200","attempts":3}
+{"timestamp":"2025-01-15T10:32:00+07:00","level":"CRITICAL","event":"brute_force_detected","ip":"192.168.1.200","attempts":10,"action":"blocked"}
+{"timestamp":"2025-01-15T11:00:00+07:00","level":"WARNING","event":"suspicious_activity","user_id":5,"ip":"unknown","action":"multiple_logins"}
+{"timestamp":"2025-01-15T11:30:00+07:00","level":"INFO","event":"ip_whitelisted","ip":"10.0.0.1","user":"admin"}
+{"timestamp":"2025-01-15T12:00:00+07:00","level":"CRITICAL","event":"sql_injection_detected","ip":"203.0.113.5","payload":"' OR '1'='1"}
+{"timestamp":"2025-01-15T12:05:00+07:00","level":"WARNING","event":"xss_attempt","ip":"203.0.113.5","payload":"<script>alert('xss')</script>"}
+{"timestamp":"2025-01-15T13:00:00+07:00","level":"CRITICAL","event":"data_breach","user_id":3,"data_type":"customer_info","records":1000}
+{"timestamp":"2025-01-15T14:00:00+07:00","level":"WARNING","event":"unauthorized_access","user_id":2,"resource":"/api/admin/users","method":"GET"}
+{"timestamp":"2025-01-15T15:00:00+07:00","level":"INFO","event":"security_scan_completed","scan_id":1,"vulnerabilities":5,"critical":1}
+{"timestamp":"2025-01-15T16:00:00+07:00","level":"CRITICAL","event":"ssl_certificate_expiring","domain":"api.example.com","days_left":7}

@@ -1,0 +1,10 @@
+{"timestamp":"2025-01-15T08:00:00+07:00","user_id":1,"email":"admin@example.com","ip":"192.168.1.100","device":"Chrome/Windows","status":"success"}
+{"timestamp":"2025-01-15T08:05:00+07:00","user_id":null,"email":"unknown@example.com","ip":"192.168.1.200","device":"Firefox/Windows","status":"failed","reason":"Invalid credentials"}
+{"timestamp":"2025-01-15T09:00:00+07:00","user_id":2,"email":"dev@example.com","ip":"192.168.1.101","device":"iPhone/Safari","status":"success","mfa":"otp"}
+{"timestamp":"2025-01-15T10:00:00+07:00","user_id":3,"email":"ba@example.com","ip":"192.168.1.102","device":"Android/Chrome","status":"success","mfa":"none"}
+{"timestamp":"2025-01-15T11:00:00+07:00","user_id":1,"email":"admin@example.com","ip":"192.168.1.100","device":"Chrome/Windows","status":"logout"}
+{"timestamp":"2025-01-15T13:00:00+07:00","user_id":4,"email":"da@example.com","ip":"192.168.1.103","device":"Mac/Safari","status":"success","mfa":"key"}
+{"timestamp":"2025-01-15T14:00:00+07:00","user_id":null,"email":"hacker@example.com","ip":"203.0.113.10","device":"Unknown","status":"failed","reason":"Account locked"}
+{"timestamp":"2025-01-15T15:00:00+07:00","user_id":5,"email":"hr@example.com","ip":"192.168.1.104","device":"iPad/Safari","status":"success"}
+{"timestamp":"2025-01-15T16:00:00+07:00","user_id":1,"email":"admin@example.com","ip":"192.168.1.100","device":"Chrome/Windows","status":"success"}
+{"timestamp":"2025-01-15T17:00:00+07:00","user_id":1,"email":"admin@example.com","ip":"192.168.1.100","device":"Chrome/Windows","status":"logout"}

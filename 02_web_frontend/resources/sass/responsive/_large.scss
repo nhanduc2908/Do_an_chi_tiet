@@ -1,0 +1,542 @@
+// ======================================================
+// Large Screen Styles (≥ 1440px)
+// Tối ưu hóa cho màn hình siêu rộng
+// ======================================================
+
+@use 'mixins' as *;
+@use 'breakpoints' as *;
+
+// -------------------- Base Large Screen Styles --------------------
+body {
+    @include large {
+        font-size: map-get($font-breakpoints, 'large');
+    }
+}
+
+// -------------------- Container --------------------
+.container {
+    @include large {
+        max-width: map-get($container-max-widths, 'large');
+        padding-right: 2.5rem;
+        padding-left: 2.5rem;
+    }
+}
+
+.container-fluid {
+    @include large {
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+
+// -------------------- Grid System Extended --------------------
+.grid-large-4 {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+.grid-large-5 {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+    }
+}
+
+.grid-large-6 {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+    }
+}
+
+.grid-large-8 {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 2rem;
+    }
+}
+
+.grid-large-12 {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+    }
+}
+
+// -------------------- Large Layout --------------------
+.layout-large {
+    @include large {
+        display: flex;
+        gap: 2.5rem;
+        
+        .layout-sidebar {
+            width: 280px;
+        }
+        
+        .layout-main {
+            flex: 1;
+        }
+        
+        .layout-rightbar {
+            width: 320px;
+        }
+    }
+}
+
+// -------------------- Large Dashboard --------------------
+.dashboard-large {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 2rem;
+        
+        .col-span-3 { grid-column: span 3; }
+        .col-span-4 { grid-column: span 4; }
+        .col-span-5 { grid-column: span 5; }
+        .col-span-6 { grid-column: span 6; }
+        .col-span-7 { grid-column: span 7; }
+        .col-span-8 { grid-column: span 8; }
+        .col-span-9 { grid-column: span 9; }
+        .col-span-10 { grid-column: span 10; }
+        .col-span-11 { grid-column: span 11; }
+        .col-span-12 { grid-column: span 12; }
+    }
+}
+
+// -------------------- Large Cards --------------------
+.card-large {
+    @include large {
+        .card-header {
+            padding: 1.5rem 2rem;
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+        
+        .card-footer {
+            padding: 1.25rem 2rem;
+        }
+    }
+}
+
+// -------------------- Large Typography --------------------
+.display-1-large {
+    @include large {
+        font-size: 4rem;
+        line-height: 1.1;
+    }
+}
+
+.display-2-large {
+    @include large {
+        font-size: 3.5rem;
+        line-height: 1.2;
+    }
+}
+
+.display-3-large {
+    @include large {
+        font-size: 3rem;
+        line-height: 1.25;
+    }
+}
+
+h1, .h1 {
+    @include large {
+        font-size: 2rem;
+    }
+}
+
+h2, .h2 {
+    @include large {
+        font-size: 1.75rem;
+    }
+}
+
+h3, .h3 {
+    @include large {
+        font-size: 1.5rem;
+    }
+}
+
+// -------------------- Large Tables --------------------
+.table-large {
+    @include large {
+        font-size: 0.9375rem;
+        
+        th, td {
+            padding: 1.25rem 1.75rem;
+        }
+        
+        &.condensed {
+            th, td {
+                padding: 0.875rem 1.5rem;
+            }
+        }
+    }
+}
+
+// -------------------- Large Forms --------------------
+.form-large {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        
+        .form-group-full {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group-half {
+            grid-column: span 2;
+        }
+    }
+}
+
+.form-control-large {
+    @include large {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+    }
+}
+
+// -------------------- Large Buttons --------------------
+.btn-large {
+    @include large {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        
+        &.btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        &.btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+    }
+}
+
+// -------------------- Large Modal --------------------
+.modal-large {
+    @include large {
+        max-width: 800px;
+        width: 90%;
+    }
+}
+
+.modal-xl-large {
+    @include large {
+        max-width: 1400px;
+        width: 90%;
+    }
+}
+
+.modal-full-large {
+    @include large {
+        max-width: 90vw;
+        width: 90vw;
+        height: 90vh;
+    }
+}
+
+// -------------------- Large Pagination --------------------
+.pagination-large {
+    @include large {
+        gap: 0.75rem;
+        
+        .page-item {
+            min-width: 44px;
+            height: 44px;
+            font-size: 0.9375rem;
+        }
+    }
+}
+
+// -------------------- Large Navigation --------------------
+.nav-large {
+    @include large {
+        .nav-items {
+            gap: 1rem;
+        }
+        
+        .dropdown-menu {
+            min-width: 240px;
+            padding: 0.5rem 0;
+            
+            .dropdown-item {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.9375rem;
+            }
+        }
+    }
+}
+
+// -------------------- Large Stats Widgets --------------------
+.stats-widget-large {
+    @include large {
+        padding: 1.5rem;
+        
+        .stat-value {
+            font-size: 2rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9375rem;
+        }
+        
+        .stat-icon {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+// -------------------- Large Charts --------------------
+.chart-container-large {
+    @include large {
+        min-height: 500px;
+        
+        canvas {
+            max-height: 500px;
+        }
+    }
+}
+
+// -------------------- Large Sidebar --------------------
+.sidebar-large {
+    @include large {
+        width: 280px;
+        
+        .sidebar-item {
+            padding: 0.75rem 1rem;
+            
+            .sidebar-icon {
+                font-size: 1.25rem;
+            }
+            
+            .sidebar-text {
+                font-size: 0.9375rem;
+            }
+        }
+        
+        &.collapsed {
+            width: 100px;
+            
+            .sidebar-text {
+                display: none;
+            }
+            
+            .sidebar-icon {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+// -------------------- Large Multi-Column Layout --------------------
+.multi-column-large {
+    @include large {
+        column-count: 2;
+        column-gap: 2rem;
+        
+        .break-avoid {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+    }
+}
+
+.multi-column-3-large {
+    @include large {
+        column-count: 3;
+        column-gap: 2rem;
+    }
+}
+
+// -------------------- Large Floating Panels --------------------
+.floating-panel-large {
+    @include large {
+        position: sticky;
+        top: 100px;
+        right: 0;
+        width: 380px;
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        margin-left: auto;
+        z-index: 90;
+    }
+}
+
+// -------------------- Large Split Screen --------------------
+.split-screen-large {
+    @include large {
+        display: flex;
+        gap: 2rem;
+        min-height: calc(100vh - 200px);
+        
+        .split-left {
+            flex: 1;
+            border-right: 1px solid #e5e7eb;
+            padding-right: 2rem;
+        }
+        
+        .split-right {
+            flex: 1;
+            padding-left: 2rem;
+        }
+    }
+}
+
+// -------------------- Large Timeline --------------------
+.timeline-large {
+    @include large {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            
+            .timeline-marker {
+                width: 48px;
+                flex-shrink: 0;
+            }
+            
+            .timeline-content {
+                flex: 1;
+            }
+        }
+    }
+}
+
+// -------------------- Large Kanban Board --------------------
+.kanban-board-large {
+    @include large {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        
+        .kanban-column {
+            min-width: 320px;
+            flex: 1;
+        }
+    }
+}
+
+// -------------------- Large Data Grid --------------------
+.data-grid-large {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+// -------------------- Large Hero Section --------------------
+.hero-large {
+    @include large {
+        padding: 6rem 0;
+        
+        .hero-title {
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+    }
+}
+
+// -------------------- Large Testimonials --------------------
+.testimonials-large {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        
+        .testimonial-card {
+            padding: 2rem;
+        }
+    }
+}
+
+// -------------------- Large Pricing Tables --------------------
+.pricing-grid-large {
+    @include large {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        
+        .pricing-card {
+            padding: 2rem;
+            
+            .pricing-price {
+                font-size: 3rem;
+            }
+        }
+    }
+}
+
+// -------------------- Large Footer --------------------
+.footer-large {
+    @include large {
+        padding: 4rem 0 2rem;
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+    }
+}
+
+// -------------------- Large Notification Center --------------------
+.notification-center-large {
+    @include large {
+        max-width: 480px;
+        right: 1.5rem;
+        
+        .notification-item {
+            padding: 1rem;
+        }
+    }
+}
+
+// -------------------- Large Search Results --------------------
+.search-results-large {
+    @include large {
+        .result-item {
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            
+            .result-title {
+                font-size: 1.25rem;
+            }
+            
+            .result-snippet {
+                font-size: 0.9375rem;
+            }
+        }
+    }
+}

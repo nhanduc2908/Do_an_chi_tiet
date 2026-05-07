@@ -1,0 +1,2 @@
+{"timestamp":"2025-01-15T02:00:00+07:00","job":"backup:run","status":"success","size":"150MB"}
+{"timestamp":"2025-01-15T03:00:00+07:00","job":"cleanup:expired","status":"success","deleted":150}

@@ -1,0 +1,4 @@
+[2025-01-15 10:30:15] local.INFO: Application started  
+[2025-01-15 10:30:20] local.DEBUG: Database connected  
+[2025-01-15 10:35:00] local.ERROR: Failed to send email {"error":"Connection timeout"}
+[2025-01-15 11:00:00] local.INFO: User logged in {"user_id":1,"email":"admin@example.com"}

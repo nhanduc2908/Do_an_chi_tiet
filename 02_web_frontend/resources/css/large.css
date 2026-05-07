@@ -1,0 +1,112 @@
+/* ======================================================
+   Large CSS - Tối ưu cho màn hình siêu rộng
+   ====================================================== */
+
+@media screen and (min-width: 1440px) {
+    /* Wider containers */
+    .container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    
+    /* Enhanced grid for large screens */
+    .large-grid-6 {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .large-grid-5 {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Larger fonts for readability */
+    html {
+        font-size: 16px;
+    }
+    
+    /* Better spacing */
+    .large-padding {
+        padding: 2rem;
+    }
+    
+    /* Multi-column layout */
+    .large-multi-column {
+        column-count: 2;
+        column-gap: 2rem;
+    }
+    
+    /* Dashboard widgets in 4k */
+    .large-widget {
+        min-height: 180px;
+    }
+    
+    /* Sidebar width adjustment */
+    .large-sidebar {
+        width: 300px;
+    }
+    
+    /* Larger modal for big screens */
+    .large-modal {
+        max-width: 800px;
+        width: 800px;
+    }
+    
+    /* Enhanced data tables */
+    .large-table {
+        font-size: 0.9375rem;
+    }
+    
+    .large-table th,
+    .large-table td {
+        padding: 1rem 1.25rem;
+    }
+    
+    /* Parallel views */
+    .parallel-view {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .parallel-view > * {
+        flex: 1;
+    }
+    
+    /* Floating panels */
+    .floating-panel {
+        position: fixed;
+        top: 50%;
+        right: 2rem;
+        transform: translateY(-50%);
+        width: 380px;
+        background: white;
+        border-radius: 1rem;
+        box-shadow: var(--shadow-xl);
+        z-index: 200;
+    }
+}
+
+/* Ultra-wide screens (21:9, 32:9) */
+@media screen and (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .ultrawide-grid-8 {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 1.5rem;
+    }
+    
+    /* Side-by-side dashboards */
+    .ultrawide-dashboard {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .ultrawide-dashboard > * {
+        flex: 1;
+    }
+}

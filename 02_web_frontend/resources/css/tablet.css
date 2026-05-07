@@ -1,0 +1,81 @@
+/* ======================================================
+   Tablet CSS - Tối ưu cho thiết bị tablet
+   ====================================================== */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Layout */
+    .tablet-layout {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 1rem;
+    }
+    
+    /* Sidebar collapse for tablet */
+    .tablet-sidebar {
+        position: fixed;
+        left: 0;
+        top: 60px;
+        width: 240px;
+        height: calc(100vh - 60px);
+        background: white;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+        transition: transform var(--transition-normal);
+        z-index: 100;
+    }
+    
+    .tablet-sidebar.collapsed {
+        transform: translateX(-240px);
+    }
+    
+    /* Main content adjustment */
+    .tablet-main {
+        margin-left: 240px;
+        transition: margin var(--transition-normal);
+    }
+    
+    .tablet-main.expanded {
+        margin-left: 0;
+    }
+    
+    /* Split view for tablet */
+    .split-view {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .split-view-left {
+        width: 280px;
+        flex-shrink: 0;
+    }
+    
+    .split-view-right {
+        flex: 1;
+    }
+    
+    /* Tablet cards grid */
+    .tablet-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Tablet dashboard */
+    .tablet-dashboard-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    /* Hover states for tablet */
+    .tablet-hover:hover {
+        transform: translateY(-2px);
+        transition: transform var(--transition-fast);
+    }
+    
+    /* Two-column layout for tablet */
+    .tablet-two-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}

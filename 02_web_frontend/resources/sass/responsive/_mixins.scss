@@ -1,0 +1,367 @@
+// ======================================================
+// Responsive Mixins
+// Tập hợp các mixin hỗ trợ responsive design
+// ======================================================
+
+// -------------------- Breakpoint Mixins --------------------
+@mixin respond-to($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint `#{$breakpoint}` không tồn tại trong $breakpoints map.";
+    }
+}
+
+@mixin respond-between($start, $end) {
+    @if map-has-key($breakpoints, $start) and map-has-key($breakpoints, $end) {
+        @media (min-width: map-get($breakpoints, $start)) and (max-width: map-get($breakpoints, $end) - 1px) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint không hợp lệ.";
+    }
+}
+
+@mixin respond-max($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (max-width: map-get($breakpoints, $breakpoint) - 1px) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint `#{$breakpoint}` không tồn tại.";
+    }
+}
+
+// -------------------- Device Mixins --------------------
+@mixin mobile {
+    @include respond-max('tablet') {
+        @content;
+    }
+}
+
+@mixin mobile-only {
+    @include respond-between('mobile', 'tablet') {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @include respond-between('tablet', 'desktop') {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @include respond-between('desktop', 'large') {
+        @content;
+    }
+}
+
+@mixin desktop-only {
+    @include respond-between('desktop', 'large') {
+        @content;
+    }
+}
+
+@mixin large {
+    @include respond-to('large') {
+        @content;
+    }
+}
+
+@mixin touch {
+    @media (hover: none) and (pointer: coarse) {
+        @content;
+    }
+}
+
+@mixin no-touch {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+// -------------------- Orientation Mixins --------------------
+@mixin landscape {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin portrait {
+    @media (orientation: portrait) {
+        @content;
+    }
+}
+
+// -------------------- Retina Mixins --------------------
+@mixin retina {
+    @media (-webkit-min-device-pixel-ratio: 2), 
+           (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+@mixin retina-2x {
+    @media (-webkit-min-device-pixel-ratio: 2), 
+           (min-resolution: 192dpi) {
+        @content;
+    }
+}
+
+@mixin retina-3x {
+    @media (-webkit-min-device-pixel-ratio: 3), 
+           (min-resolution: 288dpi) {
+        @content;
+    }
+}
+
+// -------------------- Print Mixin --------------------
+@mixin print {
+    @media print {
+        @content;
+    }
+}
+
+// -------------------- Dark Mode Mixin --------------------
+@mixin dark-mode {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}
+
+@mixin light-mode {
+    @media (prefers-color-scheme: light) {
+        @content;
+    }
+}
+
+// -------------------- Reduced Motion Mixin --------------------
+@mixin reduced-motion {
+    @media (prefers-reduced-motion: reduce) {
+        @content;
+    }
+}
+
+// -------------------- High Contrast Mixin --------------------
+@mixin high-contrast {
+    @media (prefers-contrast: high) {
+        @content;
+    }
+}
+
+// -------------------- Container Queries Mixins --------------------
+@mixin container($width) {
+    container: inline-size;
+    
+    @container (min-width: #{$width}) {
+        @content;
+    }
+}
+
+// -------------------- Fluid Typography Mixin --------------------
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+    
+    @if $u1 == $u2 and $u1 == px and $u3 == $u4 and $u3 == px {
+        $min-vw: strip-unit($min-vw);
+        $max-vw: strip-unit($max-vw);
+        $min-font-size: strip-unit($min-font-size);
+        $max-font-size: strip-unit($max-font-size);
+        
+        font-size: $min-font-size * 1px;
+        
+        @media (min-width: $min-vw * 1px) {
+            font-size: calc(#{$min-font-size}px + #{($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}px) / #{($max-vw - $min-vw)}));
+        }
+        
+        @media (min-width: $max-vw * 1px) {
+            font-size: $max-font-size * 1px;
+        }
+    }
+}
+
+// -------------------- Grid System Mixins --------------------
+@mixin grid-container($columns: 12, $gap: 1rem) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+@mixin grid-span($columns: 1, $total: 12) {
+    grid-column: span $columns;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// -------------------- Utility Mixins --------------------
+@mixin hide-on-mobile {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+@mixin hide-on-tablet {
+    @include tablet {
+        display: none !important;
+    }
+}
+
+@mixin hide-on-desktop {
+    @include desktop {
+        display: none !important;
+    }
+}
+
+@mixin show-on-mobile {
+    display: none;
+    
+    @include mobile {
+        display: block;
+    }
+}
+
+@mixin show-on-tablet {
+    display: none;
+    
+    @include tablet {
+        display: block;
+    }
+}
+
+@mixin show-on-desktop {
+    display: none;
+    
+    @include desktop {
+        display: block;
+    }
+}
+
+// -------------------- Helper Functions --------------------
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+// -------------------- Responsive Spacing Mixins --------------------
+@mixin responsive-padding($mobile, $tablet: null, $desktop: null) {
+    $tablet: if($tablet == null, $mobile, $tablet);
+    $desktop: if($desktop == null, $tablet, $desktop);
+    
+    padding: $mobile;
+    
+    @include tablet {
+        padding: $tablet;
+    }
+    
+    @include desktop {
+        padding: $desktop;
+    }
+}
+
+@mixin responsive-margin($mobile, $tablet: null, $desktop: null) {
+    $tablet: if($tablet == null, $mobile, $tablet);
+    $desktop: if($desktop == null, $tablet, $desktop);
+    
+    margin: $mobile;
+    
+    @include tablet {
+        margin: $tablet;
+    }
+    
+    @include desktop {
+        margin: $desktop;
+    }
+}
+
+// -------------------- Responsive Font Size Mixin --------------------
+@mixin responsive-font($min-size, $max-size, $min-width: 320px, $max-width: 1440px) {
+    font-size: $min-size;
+    
+    @media (min-width: $min-width) {
+        font-size: calc(#{$min-size} + (#{strip-unit($max-size) - strip-unit($min-size)}) * ((100vw - #{$min-width}) / (#{strip-unit($max-width)} - #{strip-unit($min-width)})));
+    }
+    
+    @media (min-width: $max-width) {
+        font-size: $max-size;
+    }
+}
+
+// -------------------- Safe Area Mixin --------------------
+@mixin safe-area-inset {
+    padding-top: env(safe-area-inset-top);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+}
+
+// -------------------- Scrollbar Hide Mixin --------------------
+@mixin hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+// -------------------- Custom Scrollbar Mixin --------------------
+@mixin custom-scrollbar($width: 8px, $thumb-color: #cbd5e1, $track-color: #f1f5f9) {
+    &::-webkit-scrollbar {
+        width: $width;
+        height: $width;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: $track-color;
+        border-radius: $width;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        border-radius: $width;
+        
+        &:hover {
+            background: darken($thumb-color, 10%);
+        }
+    }
+}
+
+// -------------------- Truncate Text Mixin --------------------
+@mixin truncate($lines: 1) {
+    @if $lines == 1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    } @else {
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

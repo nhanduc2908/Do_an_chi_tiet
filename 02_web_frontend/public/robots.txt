@@ -1,0 +1,27 @@
+# ======================================================
+# WebApp Robots.txt
+# Hướng dẫn các search engine crawl website
+# ======================================================
+
+User-agent: *
+Allow: /
+Allow: /dashboard
+Allow: /users
+Allow: /reports
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /devices/link
+Disallow: /devices/mirror
+Disallow: /audit/
+Disallow: /*?*
+
+# Sitemap location
+Sitemap: https://webapp.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10
+
+# Host
+Host: https://webapp.com

@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "project_type": "app",
+  "migration": {
+    "version": "v1"
+  }
+}
